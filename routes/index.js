@@ -19,7 +19,15 @@ router.post('/:action', function(req, res, next){   //it is post not get
 })
 
 router.get('/project/:name', function(req, res, next){
+    var pages = ['perc', 'velocity360']
+    
 	var name = req.params.name 
+
+	if (pages.indexOf(name) == -1){
+		res.render('error', {message: "Page does not exist, check your spelling"})
+        
+        return
+	}
 
 	if (name == name) {
         res.render(name, null)		
