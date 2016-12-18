@@ -4,7 +4,7 @@ var sendgrid = require('sendgrid')
 
 var helper = require('sendgrid').mail;
 var from_email = new helper.Email('guoqianp@gmail.com');
-var to_email = new helper.Email('gzpgg3x@gmailcom');
+var to_email = new helper.Email('gzpgg3x@gmail.com');
 var subject = 'Hello World from the SendGrid Node.js Library!';
 var content = new helper.Content('text/plain', 'Hello, Email!');
 var mail = new helper.Mail(from_email, subject, to_email, content);
@@ -40,7 +40,7 @@ router.get('/', function(req, res, next) {
 	    return
 
 
-	  
+
 	});
 
 
