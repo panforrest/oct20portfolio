@@ -4,9 +4,6 @@ var router = express.Router();
 var helper = require('sendgrid').mail;
 var from_email = new helper.Email('guoqianp@gmail.com');
 var to_email = new helper.Email('gzpgg3x@gmail.com');
-var subject = 'Hello World from the SendGrid Node.js Library!';
-var content = new helper.Content('text/plain', 'Hello, Email!');
-var mail = new helper.Mail(from_email, subject, to_email, content);
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
@@ -26,6 +23,11 @@ router.post('/:action', function(req, res, next){   //it is post not get
 
 	if (action == 'contact'){        //if (action == 'post'){    NOT WORK 
 		console.log(req.body)     //console.log(params.body)    NOT WORK
+
+		var subject = req.body.subject;
+		var content = new helper.Content('text/plain', req.body.message);
+		var mail = new helper.Mail(from_email, subject, to_email, content);
+
 
 		//send email to yourself
 
@@ -52,10 +54,11 @@ router.post('/:action', function(req, res, next){   //it is post not get
 				return
 			}
 
-			res.json({
-				confirmation: 'success',
-				response: response.body    //but wny?
-			})
+            res.redirect('/confirmation')
+			// res.json({
+			// 	confirmation: 'success',
+			// 	response: response.body    //but wny?
+			// })
 
 		    return
 
@@ -64,7 +67,7 @@ router.post('/:action', function(req, res, next){   //it is post not get
 		});
 
 
-		
+
 	} 
 })
 
