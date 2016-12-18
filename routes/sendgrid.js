@@ -24,7 +24,7 @@ router.get('/', function(req, res, next) {
 	  console.log(response.headers);
 	});
 
-	if (err){
+	if (error){
 		res.json({
 			confirmation: 'fail',
 			message: error
