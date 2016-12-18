@@ -19,6 +19,7 @@ router.post('/:action', function(req, res, next){   //it is post not get
 
 	if (action == 'contact'){        //if (action == 'post'){    NOT WORK 
 		console.log(req.body)     //console.log(params.body)    NOT WORK
+		//send email to yourself
 		res.redirect('/confirmation')      //res.redirect('/confirmation', null) NOT WORK  
 	} 
 })
