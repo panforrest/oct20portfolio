@@ -22,23 +22,28 @@ router.get('/', function(req, res, next) {
 	  console.log(response.statusCode);
 	  console.log(response.body);
 	  console.log(response.headers);
-	});
 
-	if (error){
+		if (error){
+			res.json({
+				confirmation: 'fail',
+				message: error
+			})
+
+			return
+		}
+
 		res.json({
-			confirmation: 'fail',
-			message: error
+			confirmation: 'success',
+			response: response.body    //but wny?
 		})
 
-		return
-	}
+	    return
 
-	res.json({
-		confirmation: 'success',
-		response: response.body    //but wny?
-	})
 
-    return
+	  
+	});
+
+
 });
 
 module.exports = router;
