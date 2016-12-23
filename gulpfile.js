@@ -32,7 +32,7 @@ gulp.task('css', function(){
 		    './public/css/animate.css',
 		    './public/css/magnific-popup.css',
 		    './public/css/custom.css',
-		    './publiccss/responsive.css',
+		    './public/css/responsive.css',
 		]
 	)
     .pipe(minifyCSS())
@@ -42,6 +42,6 @@ gulp.task('css', function(){
 
 })
 
-gulp.task('default', ['build'], function(){})
+gulp.task('default', ['build', 'css'], function(){})
 
 
