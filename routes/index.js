@@ -20,6 +20,10 @@ router.get('/about', function(req, res, next){
 	res.render('about', null)
 })
 
+router.get('/createproject', function(req, res, next){
+	res.render('createproject', null)
+})
+
 router.get('/inquiries', function(req, res, next){
 	// res.render('inquiries', null)
 	Inquiry.find(null, function(err, inquiries){
@@ -60,6 +64,14 @@ router.get('/project/:name', function(req, res, next){
 
 router.post('/:action', function(req, res, next){
 	var action = req.params.action
+
+	if (action == 'project'){
+		res.json({
+			project: req.body
+		})
+
+		return
+	}
 	
 	if (action == 'contact'){
 		console.log(req.body)

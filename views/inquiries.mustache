@@ -26,7 +26,7 @@
 					
 						</div>
 
-						<table class="table table-stripped">
+						<table class="table table-striped">
 						    <thead>
 	                            <tr>
 	                                <td>Subject</td>
@@ -41,7 +41,7 @@
 	                        {{#list}}
 	                            <tr>
 	                                <td>{{subject}}</td>
-	                                <td>{{email}}</td>
+	                                <td><a href="mailto:{{email}}">{{email}}</a></td>
 	                                <td>{{fullName}}</td>
 	                                <td>{{message}}</td>
 
