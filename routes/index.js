@@ -1,6 +1,7 @@
 var express = require('express');
 var router = express.Router();
 var Inquiry = require('../models/Inquiry')
+var Project = require('../models/Project')
 
 // var helper = require('sendgrid').mail;
 // var from_email = new helper.Email('info@thegridmedia.com');
@@ -66,8 +67,16 @@ router.post('/:action', function(req, res, next){
 	var action = req.params.action
 
 	if (action == 'project'){
-		res.json({
-			project: req.body
+
+		Project.create(req.body, function(err, project){
+			if (err){
+				res.render('error', err)
+				return
+			}
+
+			res.json({
+				project: project
+			})
 		})
 
 		return
