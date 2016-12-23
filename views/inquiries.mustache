@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en-US">
+<head>
+
+{{>head}}
+
+</head>
+
+<body class="stretched">
+
+	<div id="wrapper" class="clearfix">
+
+		{{>nav}}
+
+		<section id="content">
+
+			<div class="content-wrap" style="padding:0px">
+
+			
+
+				<div class="section notopmargin" style="background:#fff"; border=top:1px solid #ddd>
+					<div class="container clearfix">
+						<div class="heading-block center nomargin">
+							<h3>Inquiries</h3>
+
+
+						</div>
+
+					{{#list}}
+				        {{subject}}
+
+				    {{/list}}
+					</div>
+				</div>
+
+
+
+			</div>
+
+		</section>
+
+		{{>footer}}
+
+	</div>
+
+
+    <script type="text/javascript" src="/build/vendor.min.js"></script>
+<!-- 	<script type="text/javascript" src="js/jquery.js"></script>
+	<script type="text/javascript" src="js/plugins.js"></script>
+
+
+	<script type="text/javascript" src="js/functions.js"></script> -->
+
+</body>
+</html>
