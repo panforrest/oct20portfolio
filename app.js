@@ -7,6 +7,7 @@ var bodyParser = require('body-parser');
 require('dotenv').config()
 var routes = require('./routes/index');
 var sendgrid = require('./routes/sendgrid');
+var compression = require('compression');
 var users = require('./routes/users');
 // require('dotenv').config()
 
