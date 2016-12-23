@@ -8,8 +8,18 @@ require('dotenv').config()
 var routes = require('./routes/index');
 var sendgrid = require('./routes/sendgrid');
 var compression = require('compression');
+var mongoose = require('mongoose');
 var users = require('./routes/users');
-// require('dotenv').config()
+
+var dbUrl = 'mongodb://localhost/portfolio'
+mongoose.connect(dbUrl, function(err, res){
+  if (err){
+    console.log('DB CONNECTION FALED: '+err)
+  }
+  else{
+    console.log('DB CONNECTED SUCCESS: '+dbUrl)
+  }
+})
 
 var app = express();
 
