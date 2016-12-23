@@ -11,13 +11,13 @@ var compression = require('compression');
 var mongoose = require('mongoose');
 var users = require('./routes/users');
 
-var dbUrl = 'mongodb://localhost/portfolio'
-mongoose.connect(dbUrl, function(err, res){
+// var dbUrl = 'mongodb://localhost/portfolio'
+mongoose.connect(process.env.DB_URL, function(err, res){
   if (err){
     console.log('DB CONNECTION FALED: '+err)
   }
   else{
-    console.log('DB CONNECTED SUCCESS: '+dbUrl)
+    console.log('DB CONNECTED SUCCESS: '+process.env.DB_URL)
   }
 })
 
